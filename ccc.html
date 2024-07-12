@@ -23,14 +23,14 @@ var c = [];
 
 for(i = -n; i < n; i++){
 for(j=-n;j<n;j++){
-u=i/n*2;
-v=j/n*2;
+u=i/n;
+v=j/n;
     
 xx=u/3*(1-u*u/3+v*v);
 yy=-v/3*(1-v*v/3+u*u);
-xxx=xx*Math.cos(2*t)-yy*Math.sin(2*t);
+xxx=xx*Math.cos(t)-yy*Math.sin(t);
 yyy=xx*Math.sin(t)+yy*Math.cos(t);
-x.push(xxx/2);
+x.push(xxx);
 y.push(yyy); 
      z.push(u*u-v*v);
      c.push(i)
@@ -51,7 +51,7 @@ marker: {
  line: {
    width: 0,
    color: c,
-   colorscale: 'Viridis'}
+   colorscale: 'heatmap'}
 }],{width:800,height:800});
 
 requestAnimationFrame(loop);
